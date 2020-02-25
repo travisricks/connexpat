@@ -1,7 +1,10 @@
 <h1>All Articles</h1>
 <ul id="articles">
     <% @articles.each do |article| %>
-        <li>
+        <li> 
+        <% if article.image.present? %>
+        <%= link_to image_tag(article.image.url, :class => "img_preview"), article_path(article) %>
+        <% end %>
             <%= link_to article.title, article_path(article) %>
         </li>
     <% end %>

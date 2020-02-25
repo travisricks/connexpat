@@ -548,9 +548,9 @@ a.new_article:active,
   border-bottom-left-radius: 6px;
   border-bottom: 0;
 }
-#articles li > a:first-child {
+#articles li > a {
   font-weight: bold;
-  display: block;
+  display: inline-block;
   color: #2d4159;
   padding-bottom: 0.1em;
 }
