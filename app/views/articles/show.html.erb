@@ -11,7 +11,7 @@
 
 <% if @article.image.exists? %>
 <p>
-    <%= image_tag @article.image.url %></p>
+    <%= image_tag @article.image.url(:large) %></p>
 <% end %>
 
 

@@ -18,7 +18,7 @@
   </p>
   <p>
     <% if @article.image.exists? %>
-        <%= image_tag(@article.image.url, :class => "img_preview") %><br/>
+        <%= image_tag(@article.image.url(:thumb)) %><br/>
     <% end %>
     <%= f.label :image, "Attach an Image" %><br />
     <%= f.file_field :image %>

@@ -3,7 +3,7 @@
     <% @articles.each do |article| %>
         <li> 
         <% if article.image.present? %>
-        <%= link_to image_tag(article.image.url, :class => "img_preview"), article_path(article) %>
+        <%= link_to image_tag(article.image.url(:thumb)), article_path(article) %>
         <% end %>
             <%= link_to article.title, article_path(article) %>
         </li>
