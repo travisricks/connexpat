@@ -1,11 +1,19 @@
 <h1><%= @article.title %></h1>
+<% if @article.tags.exists? %>
+    <p>
+        Tags:
+        <% @article.tags.each do |tag| %>
+            <%= link_to tag.name, tag_path(tag) %>
+        <% end %>
+        
+    </p>
+<% end %>
+
+<% if @article.image.exists? %>
 <p>
-    Tags:
-    <% @article.tags.each do |tag| %>
-        <%= link_to tag.name, tag_path(tag) %>
-    <% end %>
-</p>
-<p><%= image_tag @article.image.url %></p>
+    <%= image_tag @article.image.url %></p>
+<% end %>
+
 
 <p><%= @article.body %></p>
 
