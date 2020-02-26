@@ -62,3 +62,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'paperclip'
 
 gem 'sorcery'
+
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
