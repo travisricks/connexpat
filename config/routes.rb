@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-  root to: 'articles#index'
+  get 'home/index'
+  root to: 'home#index'
   resources :articles do
     resources :comments
   end

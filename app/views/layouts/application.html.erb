@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
     <title>Connexpat</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -11,19 +15,27 @@
 
   <body>
   <p class="flash"><%= flash.notice %></p>
-  <div>
-    <div>
+  <div class="container">
+  <div class="row">
+    <div class="col-sm-8">
       <%= yield %>
-      <hr>
-      <h6>
-        <% if logged_in? %>
-          <%= "Logged in as #{current_user.email}" %>
-          <%= link_to "(logout)", logout_path %>
-        <% else %>
-          <%= link_to "(login)", login_path %>
-        <% end %>
-      </h6>
+
     </div>
+    <div class="col-sm-4">
+foo
+    </div>
+  </div>
+      <footer>
+        <hr>
+        <h6>
+          <% if logged_in? %>
+            <%= "Logged in as #{current_user.email}" %>
+            <%= link_to "(logout)", logout_path %>
+          <% else %>
+            <%= link_to "(login)", login_path %>
+          <% end %>
+        </h6>
+      </footer>
   </div>
   </body>
 </html>
