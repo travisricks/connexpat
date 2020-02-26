@@ -1,12 +1,21 @@
-<h1>All Articles</h1>
-<ul id="articles">
+<div class="col-sm-8">
+  <h1>All Articles</h1>
+
+  <div class="row row-cols-1 row-cols-md-3">
     <% @articles.each do |article| %>
-        <li> 
-        <% if article.image.present? %>
-        <%= link_to image_tag(article.image.url(:thumb)), article_path(article) %>
-        <% end %>
-            <%= link_to article.title, article_path(article) %>
-        </li>
+
+    <div class="col mb-4">
+      <div class="card h-100">
+        <% if article.image.present? %> 
+        <%= link_to image_tag(article.image.url(:large), class: "card-img-top"),
+        article_path(article) %> <% end %>
+        <div class="card-body">
+          <h5 class="card-title"><%= article.title %></h5>
+          <%= link_to article.title, article_path(article), class: "btn
+          btn-primary" %>
+        </div>
+      </div>
+    </div>
     <% end %>
-</ul>
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+  </div>
+</div>

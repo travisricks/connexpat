@@ -15,14 +15,17 @@
 
   <body>
   <p class="flash"><%= flash.notice %></p>
+  <%= render partial: 'layouts/navbar' %>
+
   <div class="container">
   <div class="row">
-    <div class="col-sm-8">
       <%= yield %>
+    <%# <div class="col-sm-8">
 
-    </div>
+    </div> %>
     <div class="col-sm-4">
-foo
+      <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+
     </div>
   </div>
       <footer>

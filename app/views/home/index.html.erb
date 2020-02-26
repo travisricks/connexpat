@@ -1,6 +1,11 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="col-12"><div class="jumbotron jumbotron-fluid">
+<div class="container">
+<h1 class="display-4">Connexpat</h1>
+<p class="lead">A community for expats in Tokyo.</p>
+</div>
+</div></div>
 
+<div class="col-sm-8">
 <h1>All Articles</h1>
 <ul id="articles">
     <% @articles.each do |article| %>
@@ -12,4 +17,4 @@
         </li>
     <% end %>
 </ul>
-<%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+</div>

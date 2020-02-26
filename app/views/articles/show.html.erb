@@ -1,3 +1,4 @@
+<div class="col-sm-8">
 <h1><%= @article.title %></h1>
 <% if @article.tags.exists? %>
     <p>
@@ -25,3 +26,4 @@
     <%= link_to "Edit Article", edit_article_path(@article) %>
     <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Are you sure? No takebacks!"} %>
 <% end %>
+</div>
