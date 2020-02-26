@@ -11,19 +11,25 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+
   </head>
 
   <body>
-  <p class="flash"><%= flash.notice %></p>
+  <% flash.each do |type, msg| %>
+    <div class="alert alert-primary">
+      <%= msg %>
+    </div>
+  <% end %>
   <%= render partial: 'layouts/navbar' %>
 
-  <div class="container">
+  <div class="container mt-3">
   <div class="row">
       <%= yield %>
     <%# <div class="col-sm-8">
 
     </div> %>
-    <div class="col-sm-4">
+    <div class="col-sm-3">
       <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
 
     </div>

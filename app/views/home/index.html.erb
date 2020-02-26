@@ -5,16 +5,6 @@
 </div>
 </div></div>
 
-<div class="col-sm-8">
-<h1>All Articles</h1>
-<ul id="articles">
-    <% @articles.each do |article| %>
-        <li> 
-        <% if article.image.present? %>
-        <%= link_to image_tag(article.image.url(:thumb)), article_path(article) %>
-        <% end %>
-            <%= link_to article.title, article_path(article) %>
-        </li>
-    <% end %>
-</ul>
+<div class="col-sm-9">
+  <%= render partial: 'articles/all-articles' %>
 </div>

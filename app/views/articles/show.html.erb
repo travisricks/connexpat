@@ -1,10 +1,10 @@
 <div class="col-sm-8">
-<h1><%= @article.title %></h1>
+<h1 class="mt-4 display-3"><%= @article.title %></h1>
 <% if @article.tags.exists? %>
     <p>
         Tags:
         <% @article.tags.each do |tag| %>
-            <%= link_to tag.name, tag_path(tag) %>
+            <%= link_to tag.name, tag_path(tag), class: "badge badge-primary" %>
         <% end %>
         
     </p>
@@ -12,7 +12,7 @@
 
 <% if @article.image.exists? %>
 <p>
-    <%= image_tag @article.image.url(:large) %></p>
+    <%= image_tag @article.image.url(:large), class: "img-fluid" %></p>
 <% end %>
 
 
