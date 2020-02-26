@@ -30,7 +30,10 @@
 
     </div> %>
     <div class="col-sm-3">
+          <% if logged_in? %>
+
       <%= link_to "Create a New Article", new_article_path, class: "new_article" %>
+          <% end %>
 
     </div>
   </div>
