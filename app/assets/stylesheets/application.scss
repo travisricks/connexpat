@@ -38,3 +38,17 @@ span.badge {
 #article_image:hover {
   cursor: pointer;
 }
+
+article {
+  p:first-child:first-letter {
+    color: #fe6c5c;
+    float: left;
+    // font-family: Georgia;
+    font-size: 90px;
+    font-weight: 700;
+    line-height: 60px;
+    padding-top: 8px;
+    padding-right: 10px;
+    // padding-left: 3px;
+  }
+}

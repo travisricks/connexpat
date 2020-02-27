@@ -1,8 +1,8 @@
 <div class="col-sm-8">
-<h1 class="mt-4 display-3"><%= @article.title %></h1>
+<h1 class="display-4"><%= @article.title %></h1>
 <% if @article.tags.exists? %>
     <p>
-        Tags:
+        <%= link_to "Tags:", tags_path %>
         <% @article.tags.each do |tag| %>
             <%= link_to tag.name, tag_path(tag), class: "badge badge-primary" %>
         <% end %>
@@ -15,15 +15,16 @@
     <%= image_tag @article.image.url(:large), class: "img-fluid" %></p>
 <% end %>
 
-
-<p><%= @article.body %></p>
-
-<h3>Comments (<%= @article.comments.size %>)</h3>
+<article>
+<%= simple_format @article.body %>
+</article>
+<hr>
+<h4>Comments (<%= @article.comments.size %>)</h4>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
-<%= link_to "<< Back to Articles List", articles_path %>
+<%= link_to "All Articles", articles_path %>
 <% if logged_in? %>
-    <%= link_to "Edit Article", edit_article_path(@article) %>
+    | <%= link_to "Edit Article", edit_article_path(@article) %> | 
     <%= link_to "delete", article_path(@article), method: :delete, data: {confirm: "Are you sure? No takebacks!"} %>
 <% end %>
 </div>
