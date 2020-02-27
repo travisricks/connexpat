@@ -1,5 +1,7 @@
 _This was built during my time as a student at Code Chrysalis._
 
+![app screenshot](readme-screenshot.png)
+
 # Connexpat
 
 This was built during my polyglot week at Code Chrysalis. We were given one week to learn a new programming language and build a new project. I chose Ruby and Ruby on Rails. I built a blog that supports user authentication. It's currently set up to serve expats in Tokyo, but could easily be changed to support other communities.
