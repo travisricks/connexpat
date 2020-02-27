@@ -19,7 +19,7 @@
 <%= simple_format @article.body %>
 </article>
 <hr>
-<h4>Comments (<%= @article.comments.size %>)</h4>
+<h4 class="text-primary">Comments (<%= @article.comments.size %>)</h4>
 <%= render partial: 'articles/comment', collection: @article.comments %>
 <%= render partial: 'comments/form' %>
 <%= link_to "All Articles", articles_path %>
